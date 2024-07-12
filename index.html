@@ -14,8 +14,8 @@
         background-color: #222;
         color: #fff;
         display: flex; /* Use flexbox for layout */
-        justify-content: space-between; /* Distribute items evenly */
-        align-items: flex-start; /* Align items to the top */
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
       }
       h1,
       h2 {
@@ -45,17 +45,22 @@
         margin-right: 10px;
       }
       .youtube-cover {
-        max-width: 300px; /* Adjust width of the image */
-        margin-left: auto; /* Pushes the image to the right */
-        margin-right: 20px; /* Adds some margin for spacing */
-        display: block;
-        margin-top: 250px; /* Ensures the image behaves like a block element */
+        max-width: 100%; /* Ensure the cover image is responsive */
+        display: block; /* Ensure the image behaves as a block element */
+        margin-bottom: 20px; /* Add some spacing below the image */
       }
     </style>
   </head>
   <body>
     <div>
       <h1>Let's Interact!</h1>
+      <div>
+        <img
+          class="youtube-cover"
+          src="images/youtubecover.png"
+          alt="YouTube Cover Image"
+        />
+      </div>
 
       <h2>Surveys</h2>
       <ul>
@@ -108,14 +113,6 @@
           </a>
         </li>
       </ul>
-    </div>
-
-    <div>
-      <img
-        class="youtube-cover"
-        src="images/youtubecover.png"
-        alt="YouTube Cover Image"
-      />
     </div>
   </body>
 </html>

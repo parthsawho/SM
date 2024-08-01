@@ -8,18 +8,24 @@
       body {
         font-family: Arial, sans-serif;
         line-height: 1.6;
-        max-width: 800px;
-        margin: 20px auto;
-        padding: 0 20px;
+        margin: 0;
+        padding: 0;
         background-color: #222;
         color: #fff;
         display: flex;
-        flex-direction: column;
+        justify-content: center;
         align-items: center;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      .container {
+        max-width: 800px;
+        padding: 20px;
+        background-color: #222;
+        text-align: center;
       }
       h1,
       h2 {
-        text-align: center;
         color: #ffffff;
         width: 100%;
       }
@@ -28,9 +34,11 @@
         padding: 0;
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
       }
       li {
-        margin: 0 20px;
+        margin: 10px;
       }
       a {
         color: #a9aaac;
@@ -57,21 +65,39 @@
         display: block;
         margin-bottom: 20px;
       }
+      .offer-text {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+      }
+      .aimerz-logo {
+        max-width: 200px;
+        height: auto;
+        margin-bottom: 20px;
+      }
     </style>
   </head>
   <body>
-    <div>
+    <div class="container">
       <h1>Let's Interact!</h1>
       <div>
         <img
           class="youtube-cover"
           src="images/linkedin banner 1 copy.jpg"
-          alt="cover image"
+          alt="YouTube Cover Image"
         />
       </div>
-
+      <div class="offer-text">Register Now for Exciting Offers</div>
+      <div class="logo" style="display: grid; place-items: center">
+        <a href="https://aimerz.ai/">
+          <img
+            style="max-width: 200px"
+            src="images/Untitled design (27).png"
+            alt=""
+          />
+        </a>
+      </div>
       <h2>Social Media</h2>
-      <ul>
+      <ul class="social-media-links">
         <li>
           <a href="https://www.youtube.com/@VishwaMohan-00">
             <img class="icon" src="images/youtube (2).png" alt="YouTube Icon" />

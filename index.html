@@ -13,45 +13,49 @@
         padding: 0 20px;
         background-color: #222;
         color: #fff;
-        display: flex; /* Use flexbox for layout */
-        flex-direction: column; /* Stack items vertically */
-        align-items: center; /* Center items horizontally */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
       h1,
       h2 {
         text-align: center;
         color: #ffffff;
-        width: 100%; /* Full width for headings */
+        width: 100%;
       }
       ul {
         list-style-type: none;
         padding: 0;
+        display: flex;
+        justify-content: center;
       }
       li {
-        margin-bottom: 10px;
+        margin: 0 20px;
       }
       a {
         color: #a9aaac;
         text-decoration: none;
         display: flex;
         align-items: center;
+        transition: transform 0.3s, color 0.3s;
       }
       a:hover {
         text-decoration: underline;
         color: #88898a;
+        transform: scale(1.1);
       }
       a:active {
         color: #686969;
       }
       .icon {
-        width: 24px; 
-        height: 24px; 
+        width: 24px;
+        height: 24px;
         margin-right: 10px;
       }
       .youtube-cover {
-        max-width: 100%; 
-        display: block; 
-        margin-bottom: 20px; 
+        max-width: 100%;
+        display: block;
+        margin-bottom: 20px;
       }
     </style>
   </head>
@@ -61,45 +65,10 @@
       <div>
         <img
           class="youtube-cover"
-          src="images/youtubecover.png"
-          alt="YouTube Cover Image"
+          src="images/linkedin banner 1 copy.jpg"
+          alt="cover image"
         />
       </div>
-
-      <h2>Surveys</h2>
-      <ul>
-        <li>
-          <a href="https://forms.gle/vsMGqrRX8pdzFmnb9">
-            <img
-              class="icon"
-              src="images/sheets.png"
-              alt="Google Sheets Icon"
-            />
-            Survey: In what ways do tech courses or edtech fall short of your
-            expectations?
-          </a>
-        </li>
-        <li>
-          <a href="https://forms.gle/tN6jNV2KFjCPNgdD6">
-            <img
-              class="icon"
-              src="images/sheets.png"
-              alt="Google Sheets Icon"
-            />
-            Survey: Live Vs Recorded learning experience
-          </a>
-        </li>
-        <li>
-          <a href="https://forms.gle/DXdXSpani4eZiJ9G9">
-            <img
-              class="icon"
-              src="images/sheets.png"
-              alt="Google Sheets Icon"
-            />
-            Survey: Learning from youtube/influencers vs a paid course
-          </a>
-        </li>
-      </ul>
 
       <h2>Social Media</h2>
       <ul>

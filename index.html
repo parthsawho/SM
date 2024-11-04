@@ -55,23 +55,26 @@
     <div id="loading">Loading...</div>
     <div id="content" class="hidden">
       <div class="container mx-auto p-5 text-center fade-in">
-        <h1 class="text-3xl font-bold mb-4">Let's Interact!</h1>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+          Let's Interact!
+        </h1>
         <button
           id="darkModeToggle"
-          class="mb-4 text-black p-2 bg-gray-300 rounded"
+          class="mb-4 p-2 bg-gray-300 rounded text-black hover:bg-gray-400 transition"
         >
           Dark Mode
         </button>
         <div>
           <img
-            class="youtube-cover max-w-full mb-4"
+            class="youtube-cover max-w-full h-auto mb-4"
             src="images/image.png"
             alt="YouTube Cover Image"
             loading="lazy"
           />
         </div>
-        <div class="offer-text text-lg mb-4">
-          Register Now for Exciting Offers
+        <div class="offer-text text-lg sm:text-xl mb-4">
+          Attention! Fees for all courses will increase effective 1st December
+          2024. Enroll now to get the best deal!
         </div>
         <div class="logo mb-4 flex justify-center">
           <a href="https://aimerz.ai/">
@@ -83,9 +86,9 @@
             />
           </a>
         </div>
-        <h2 class="text-2xl font-semibold mb-2">Social Media</h2>
+        <h2 class="text-2xl sm:text-3xl font-semibold mb-2">Social Media</h2>
         <ul
-          class="social-media-links flex justify-center space-x-4 mb-4 text-black"
+          class="social-media-links flex flex-col sm:flex-row justify-center space-x-0 sm:space-x-4 space-y-2 sm:space-y-0 mb-4 text-black"
         >
           <li>
             <a
@@ -162,14 +165,22 @@
       // Check localStorage for dark mode preference on page load
       if (localStorage.getItem("darkMode") === "enabled") {
         body.classList.add("bg-gray-800", "text-white");
+      } else {
+        body.classList.add("bg-white", "text-black");
       }
 
       darkModeToggle.addEventListener("click", () => {
         body.classList.toggle("bg-gray-800");
-        body.classList.toggle("text-white");
+        body.classList.toggle("bg-white");
+
+        // Set text color based on background
         if (body.classList.contains("bg-gray-800")) {
+          body.classList.remove("text-black");
+          body.classList.add("text-white");
           localStorage.setItem("darkMode", "enabled");
         } else {
+          body.classList.remove("text-white");
+          body.classList.add("text-black");
           localStorage.setItem("darkMode", "disabled");
         }
       });

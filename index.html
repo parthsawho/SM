@@ -4,124 +4,215 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Let's Interact!</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        margin: 0;
-        padding: 0;
-        background-color: #222;
-        color: #fff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        min-height: 100vh;
+      /* Custom styles for countdown timer */
+      .countdown {
+        font-size: 1.5em;
+        margin-top: 20px;
       }
-      .container {
-        max-width: 800px;
-        padding: 20px;
-        background-color: #222;
-        text-align: center;
-      }
-      h1,
-      h2 {
-        color: #ffffff;
+
+      /* Loading animation */
+      #loading {
+        position: fixed;
+        top: 0;
+        left: 0;
         width: 100%;
-      }
-      ul {
-        list-style-type: none;
-        padding: 0;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.8);
         display: flex;
         justify-content: center;
-        flex-wrap: wrap;
-        margin-bottom: 20px;
-      }
-      li {
-        margin: 10px;
-      }
-      a {
-        color: #a9aaac;
-        text-decoration: none;
-        display: flex;
         align-items: center;
-        transition: transform 0.3s, color 0.3s;
+        z-index: 10;
+        transition: opacity 0.3s ease;
       }
-      a:hover {
-        text-decoration: underline;
-        color: #88898a;
-        transform: scale(1.1);
+
+      /* Hide loading screen */
+      .hidden {
+        opacity: 0;
+        pointer-events: none;
       }
-      a:active {
-        color: #686969;
+
+      /* Animation for the main content */
+      .fade-in {
+        animation: fadeIn 0.5s ease forwards;
       }
-      .icon {
-        width: 24px;
-        height: 24px;
-        margin-right: 10px;
-      }
-      .youtube-cover {
-        max-width: 100%;
-        display: block;
-        margin-bottom: 20px;
-      }
-      .offer-text {
-        font-size: 1.2em;
-        margin-bottom: 10px;
-      }
-      .aimerz-logo {
-        max-width: 200px;
-        height: auto;
-        margin-bottom: 20px;
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
       }
     </style>
   </head>
-  <body>
-    <div class="container">
-      <h1>Let's Interact!</h1>
-      <div>
-        <img
-          class="youtube-cover"
-          src="images/linkedin banner 1 copy.jpg"
-          alt="YouTube Cover Image"
-        />
-      </div>
-      <div class="offer-text">Register Now for Exciting Offers</div>
-      <div class="logo" style="display: grid; place-items: center">
-        <a href="https://aimerz.ai/">
+  <body class="bg-white text-black transition-colors duration-300">
+    <div id="loading">Loading...</div>
+    <div id="content" class="hidden">
+      <div class="container mx-auto p-5 text-center fade-in">
+        <h1 class="text-3xl font-bold mb-4">Let's Interact!</h1>
+        <button
+          id="darkModeToggle"
+          class="mb-4 text-black p-2 bg-gray-300 rounded"
+        >
+          Dark Mode
+        </button>
+        <div>
           <img
-            style="max-width: 200px"
-            src="images/Untitled design (27).png"
-            alt=""
+            class="youtube-cover max-w-full mb-4"
+            src="images/image.png"
+            alt="YouTube Cover Image"
+            loading="lazy"
           />
-        </a>
+        </div>
+        <div class="offer-text text-lg mb-4">
+          Register Now for Exciting Offers
+        </div>
+        <div class="logo mb-4 flex justify-center">
+          <a href="https://aimerz.ai/">
+            <img
+              class="max-w-xs"
+              src="images/Untitled design (27).png"
+              alt="Aimerz Logo"
+              loading="lazy"
+            />
+          </a>
+        </div>
+        <h2 class="text-2xl font-semibold mb-2">Social Media</h2>
+        <ul
+          class="social-media-links flex justify-center space-x-4 mb-4 text-black"
+        >
+          <li>
+            <a
+              href="https://www.youtube.com/@VishwaMohan-00"
+              class="flex items-center p-2 bg-gray-200 rounded hover:bg-gray-300 transition"
+            >
+              <img
+                class="icon w-6 h-6 mr-2"
+                src="images/youtube (2).png"
+                alt="YouTube Icon"
+                loading="lazy"
+              />
+              YouTube
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/vishwa-mohan/"
+              class="flex items-center p-2 bg-gray-200 rounded hover:bg-gray-300 transition"
+            >
+              <img
+                class="icon w-6 h-6 mr-2"
+                src="images/linkedin.png"
+                alt="LinkedIn Icon"
+                loading="lazy"
+              />
+              LinkedIn
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://x.com/VishwaMohan00"
+              class="flex items-center p-2 bg-gray-200 rounded hover:bg-gray-300 transition"
+            >
+              <img
+                class="icon w-6 h-6 mr-2"
+                src="images/twitter.png"
+                alt="Twitter Icon"
+                loading="lazy"
+              />
+              X
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.whatsapp.com/channel/0029Vacgq6e3mFY3VPbN2933"
+              class="flex items-center p-2 bg-gray-200 rounded hover:bg-gray-300 transition"
+            >
+              <img
+                class="icon w-6 h-6 mr-2"
+                src="images/whatsapp.png"
+                alt="WhatsApp Icon"
+                loading="lazy"
+              />
+              WhatsApp Community
+            </a>
+          </li>
+        </ul>
+        <div id="countdown" class="countdown"></div>
       </div>
-      <h2>Social Media</h2>
-      <ul class="social-media-links">
-        <li>
-          <a href="https://www.youtube.com/@VishwaMohan-00">
-            <img class="icon" src="images/youtube (2).png" alt="YouTube Icon" />
-            YouTube
-          </a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/vishwa-mohan/">
-            <img class="icon" src="images/linkedin.png" alt="LinkedIn Icon" />
-            LinkedIn
-          </a>
-        </li>
-        <li>
-          <a href="https://x.com/VishwaMohan00">
-            <img class="icon" src="images/twitter.png" alt="Twitter Icon" /> X
-          </a>
-        </li>
-        <li>
-          <a href="https://www.whatsapp.com/channel/0029Vacgq6e3mFY3VPbN2933">
-            <img class="icon" src="images/whatsapp.png" alt="WhatsApp Icon" />
-            WhatsApp Community
-          </a>
-        </li>
-      </ul>
     </div>
+
+    <script>
+      // Hide loading screen after content is ready
+      window.onload = function () {
+        document.getElementById("loading").classList.add("hidden");
+        document.getElementById("content").classList.remove("hidden");
+      };
+
+      // Dark Mode Toggle
+      const darkModeToggle = document.getElementById("darkModeToggle");
+      const body = document.body;
+
+      // Check localStorage for dark mode preference on page load
+      if (localStorage.getItem("darkMode") === "enabled") {
+        body.classList.add("bg-gray-800", "text-white");
+      }
+
+      darkModeToggle.addEventListener("click", () => {
+        body.classList.toggle("bg-gray-800");
+        body.classList.toggle("text-white");
+        if (body.classList.contains("bg-gray-800")) {
+          localStorage.setItem("darkMode", "enabled");
+        } else {
+          localStorage.setItem("darkMode", "disabled");
+        }
+      });
+
+      // Link Click Tracking
+      const links = document.querySelectorAll(".social-media-links a");
+      links.forEach((link) => {
+        link.addEventListener("click", (event) => {
+          const url = event.currentTarget.href;
+          const clickCount = localStorage.getItem(url)
+            ? parseInt(localStorage.getItem(url)) + 1
+            : 1;
+          localStorage.setItem(url, clickCount);
+          console.log(`Clicked ${url} - Total clicks: ${clickCount}`);
+        });
+      });
+
+      // Countdown Timer
+      const countdownElement = document.getElementById("countdown");
+      const endDate = new Date(Date.now() + 24 * 60 * 60 * 1000); // 24 hours from now
+
+      function updateCountdown() {
+        const now = new Date();
+        const remainingTime = endDate - now;
+
+        const hours = Math.floor(
+          (remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor(
+          (remainingTime % (1000 * 60 * 60)) / (1000 * 60)
+        );
+        const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+        countdownElement.textContent = `${hours}h ${minutes}m ${seconds}s`;
+
+        if (remainingTime < 0) {
+          clearInterval(countdownInterval);
+          countdownElement.textContent = "Offer has ended!";
+        }
+      }
+
+      const countdownInterval = setInterval(updateCountdown, 1000);
+      updateCountdown(); // Initial call to display the countdown immediately
+    </script>
   </body>
 </html>
